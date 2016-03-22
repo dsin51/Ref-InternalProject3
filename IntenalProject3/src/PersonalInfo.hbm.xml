@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 21, 2016 12:06:02 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.training.entity.PersonalInfo" table="PERSONALINFO">
+        <id name="roll" type="java.lang.String">
+            <column name="ROLL" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="department" type="java.lang.String">
+            <column name="DEPARTMENT" />
+        </property>
+        
+        <component name="subjects" class="com.training.entity.Academics">
+        <property name="sub1" column="sub1" ></property>
+        <property name="sub2" column="sub2" ></property>
+        <property name="sub3" column="sub3" ></property>
+        </component>
+        
+        <component name="academicsEvents" class="com.training.entity.AcademicsEvents">
+        <property name="seminar" column="seminar" ></property>
+        <property name="tecConnect" column="tecConnect" ></property>
+        <property name="gD" column="gD" ></property>
+        </component>
+        
+         <component name="culturalActivities" class="com.training.entity.CulturalActivities">
+        <property name="act1" column="act1" ></property>
+        <property name="act2" column="act2" ></property>
+        <property name="act3" column="act3" ></property>
+        </component>
+        
+         <component name="sports" class="com.training.entity.Sports">
+        <property name="sport1" column="sport1" ></property>
+        <property name="sport2" column="sport2" ></property>
+        <property name="sport3" column="sport3" ></property>
+        </component>
+    </class>
+</hibernate-mapping>
